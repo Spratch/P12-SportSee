@@ -1,0 +1,23 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 7.25rem;
+  padding: 4.25rem 5.625rem 5.375rem 6.6875rem;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.5rem;
+
+      .intro__name {
+        color: var(--red);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9rem;
+  padding: 1.125rem 5.5rem 0.75rem 1.875rem;
+  background-color: #020203;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+
+  &__nav {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+}
