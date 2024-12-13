@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiClient } from "./apiClient";
-import { User } from "../types/user";
+import { UserType } from "../types/user";
 
 export function UserService(userId: string | undefined) {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<UserType | null>(null);
 
   useEffect(() => {
     if (!userId) return;

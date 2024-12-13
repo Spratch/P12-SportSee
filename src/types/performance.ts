@@ -7,11 +7,11 @@ type Kind = {
   6: "intensity";
 };
 
-export type Performance = {
+export type PerformanceType = {
   userId: number;
   kind: Kind;
   data: {
     value: number;
     kind: number;
-  };
+  }[];
 };

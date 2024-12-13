@@ -1,4 +1,4 @@
-export type Activity = {
+export type ActivityType = {
   userId: number;
   sessions: {
     day: string;

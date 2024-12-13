@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiClient } from "./apiClient";
-import { Performance } from "../types/performance";
+import { PerformanceType } from "../types/performance";
 
 export function PerformanceService(userId: string | undefined) {
-  const [performance, setPerformance] = useState<Performance | null>(null);
+  const [performance, setPerformance] = useState<PerformanceType | null>(null);
 
   useEffect(() => {
     if (!userId) return;

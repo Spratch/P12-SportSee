@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiClient } from "./apiClient";
-import { Activity } from "../types/activity";
+import { ActivityType } from "../types/activity";
 
 export function ActivityService(userId: string | undefined) {
-  const [activity, setActivity] = useState<Activity | null>(null);
+  const [activity, setActivity] = useState<ActivityType | null>(null);
 
   useEffect(() => {
     if (!userId) return;
