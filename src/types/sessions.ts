@@ -1,4 +1,4 @@
-export type Session = {
+export type Sessions = {
   userId: number;
   sessions: {
     day: number;

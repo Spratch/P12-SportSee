@@ -11,7 +11,12 @@ export function UserService(userId: string | undefined) {
     const fetchUser = async () => {
       try {
         const response = await apiClient(`user/${userId}`);
-        setUser(response.data);
+        const { score, ...rest } = response.data;
+        const formattedResponse = {
+          ...rest,
+          todayScore: response.data.todayScore || score
+        };
+        setUser(formattedResponse);
       } catch (error) {
         console.error("Failed to fetch user:", error);
       }
