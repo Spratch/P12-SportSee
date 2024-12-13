@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./topNav.scss";
 
 export default function TopNav() {
-  const userId = 1;
+  const userId = 12;
   return (
     <header className="header">
       <Link to="/">
