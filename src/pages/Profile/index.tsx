@@ -1,21 +1,40 @@
 import { useParams } from "react-router-dom";
 import "./profile.scss";
-import { UserService } from "../../api/userService";
-import { ActivityService } from "../../api/activityService";
-import { SessionsService } from "../../api/sessionsService";
-import { PerformanceService } from "../../api/performanceService";
 import Activity from "../../components/dashboard/Activity";
 import Sessions from "../../components/dashboard/Sessions";
 import Performances from "../../components/dashboard/Performances";
 import Score from "../../components/dashboard/Score";
 import KeyDatas from "../../components/dashboard/KeyDatas";
+import { useEffect, useState } from "react";
+import { ActivityType } from "../../types/activity";
+import {
+  fetchActivity,
+  fetchPerformance,
+  fetchSessions,
+  fetchUser
+} from "../../api/services";
+import { UserType } from "../../types/user";
+import { SessionsType } from "../../types/sessions";
+import { PerformanceType } from "../../types/performance";
 
 export default function Profile() {
   const { userId } = useParams();
-  const user = UserService(userId);
-  const activity = ActivityService(userId);
-  const sessions = SessionsService(userId);
-  const performance = PerformanceService(userId);
+  const [user, setUser] = useState<UserType | null>(null);
+  const [activity, setActivity] = useState<ActivityType | null>(null);
+  const [sessions, setSessions] = useState<SessionsType | null>(null);
+  const [performance, setPerformance] = useState<PerformanceType | null>(null);
+
+  // Fetch user, activity, sessions and performance data
+  useEffect(() => {
+    const fetchAllData = async () => {
+      setUser(await fetchUser(userId));
+      setActivity(await fetchActivity(userId));
+      setSessions(await fetchSessions(userId));
+      setPerformance(await fetchPerformance(userId));
+    };
+
+    fetchAllData();
+  }, [userId]);
 
   console.log(
     "user:",
