@@ -1,14 +1,17 @@
 .profile {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1.875rem;
+  height: calc(100% - 5.375rem);
   margin-left: 7.25rem;
   padding: 4.25rem 5.625rem 5.375rem 6.6875rem;
 
   &__intro {
+    grid-column: span 4;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    margin-bottom: 4rem;
 
     h1 {
       font-size: 3rem;
@@ -19,5 +22,22 @@
         color: var(--red);
       }
     }
+  }
+
+  &__dashboard {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.875rem;
+  }
+}
+
+.dashboard__chart {
+  background-color: var(--lightgrey);
+  border-radius: 0.3125rem;
+
+  &--activity {
+    grid-column: span 3;
+    padding: 1.5rem 2rem;
   }
 }

@@ -1,0 +1,48 @@
+.profile__datas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.875rem;
+
+  .keydata {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+    background-color: var(--lightgrey);
+    border-radius: 0.3125rem;
+
+    &__icon {
+      fill: rgb(var(--icon-color));
+      background-color: rgba(var(--icon-color), 0.1);
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.375rem;
+      width: 3.75rem;
+      aspect-ratio: 1;
+
+      svg {
+        fill: inherit;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+    &__value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+    }
+    &__label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5rem;
+      color: #74798c;
+    }
+  }
+}
