@@ -15,6 +15,7 @@ export default function Score({ score }: Props) {
       <ResponsiveContainer
         width="100%"
         height="100%"
+        className="score__chart"
       >
         <PieChart
           width={400}
