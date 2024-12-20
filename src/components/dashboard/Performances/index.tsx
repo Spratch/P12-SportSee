@@ -45,7 +45,10 @@ export default function Performances({ performances }: Props) {
             stroke="white"
             polarRadius={[10, 20, 40, 60, 80]}
           />
-          <PolarAngleAxis dataKey="kind" />
+          <PolarAngleAxis
+            dataKey="kind"
+            tick={{ fill: "white" }}
+          />
           <Radar
             dataKey="value"
             fill="#FF0101"
