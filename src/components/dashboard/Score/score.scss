@@ -1,0 +1,31 @@
+.dashboard__chart--score {
+  padding: 1.5rem 1.25rem;
+  aspect-ratio: 1;
+}
+
+.score {
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--graph-black);
+  }
+
+  &__percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-weight: 500;
+    color: var(--graph-grey);
+    text-align: center;
+
+    span {
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--graph-black-2);
+    }
+  }
+}

@@ -35,6 +35,7 @@
 .dashboard__chart {
   background-color: var(--lightgrey);
   border-radius: 0.3125rem;
+  position: relative;
 
   &--activity {
     grid-column: span 3;
