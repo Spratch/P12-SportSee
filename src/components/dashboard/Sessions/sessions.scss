@@ -2,6 +2,10 @@
   background-color: var(--red);
   aspect-ratio: 1;
   position: relative;
+
+  .recharts-cartesian-axis-tick-value tspan {
+    font-size: 0.75rem;
+  }
 }
 
 .sessions {
@@ -27,8 +31,4 @@
     padding: 0.625rem 0.4375rem;
     font-size: 0.75rem;
   }
-}
-
-.recharts-cartesian-axis-tick-value tspan {
-  font-size: 0.75rem;
 }
