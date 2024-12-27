@@ -10,6 +10,7 @@ import {
   YAxis
 } from "recharts";
 import { ActivityType } from "../../../types/activity";
+import ActivtyTooltip from "./ActivityTooltip";
 
 type Props = {
   activity: ActivityType;
@@ -31,6 +32,12 @@ export default function Activity({ activity }: Props) {
           barSize={7}
           barGap={8}
         >
+          <CartesianGrid
+            stroke="#DEDEDE"
+            vertical={false}
+            strokeDasharray={"2"}
+          />
+
           <XAxis
             dataKey="day"
             tickLine={false}
@@ -52,13 +59,10 @@ export default function Activity({ activity }: Props) {
             yAxisId="left"
             hide
           />
-
-          <CartesianGrid
-            stroke="#DEDEDE"
-            vertical={false}
-            strokeDasharray={"2"}
+          <Tooltip
+            content={<ActivtyTooltip />}
+            cursor={{ fill: "#C4C4C480" }}
           />
-          <Tooltip />
           <Bar
             dataKey="kilogram"
             name="Poids (kg)"

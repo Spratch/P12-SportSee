@@ -32,3 +32,13 @@
     }
   }
 }
+
+.activity {
+  &__tooltip {
+    background-color: #e60000;
+    color: white;
+    padding: 0.25rem 0.4375rem;
+    font-size: 0.6875rem;
+    line-height: 1.5rem;
+  }
+}
