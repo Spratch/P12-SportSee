@@ -27,8 +27,6 @@ export default function Performances({ performances }: Props) {
     value: item.value
   }));
 
-  const startAngle = 210;
-
   return (
     <article className="dashboard__chart dashboard__chart--perf">
       <ResponsiveContainer
@@ -36,18 +34,17 @@ export default function Performances({ performances }: Props) {
         height="100%"
       >
         <RadarChart
-          outerRadius={80}
-          data={data}
-          startAngle={startAngle}
-          endAngle={startAngle + 360}
+          outerRadius={85}
+          data={data.reverse()}
         >
           <PolarGrid
             stroke="white"
             polarRadius={[10, 20, 40, 60, 80]}
+            radialLines={false}
           />
           <PolarAngleAxis
             dataKey="kind"
-            tick={{ fill: "white" }}
+            tick={{ fill: "white", fontSize: "0.75rem" }}
           />
           <Radar
             dataKey="value"

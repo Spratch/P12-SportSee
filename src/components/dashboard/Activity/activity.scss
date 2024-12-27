@@ -1,5 +1,7 @@
 .dashboard__chart--activity {
-  aspect-ratio: 167/64;
+  grid-column: span 3;
+  padding: 1.5rem 2rem;
+  height: 20rem;
 
   h2 {
     position: absolute;

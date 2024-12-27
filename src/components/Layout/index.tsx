@@ -8,7 +8,9 @@ export default function Layout() {
     <div className="layout">
       <TopNav />
       <SideNav />
-      <Outlet />
+      <div className="page-wrapper">
+        <Outlet />
+      </div>
     </div>
   );
 }

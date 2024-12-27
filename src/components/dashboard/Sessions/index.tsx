@@ -9,20 +9,22 @@ type Props = {
 };
 
 export default function Sessions({ sessions }: Props) {
+  // Mock a missing past (and add top padding by giving a higher value)
+  const data = [
+    {
+      day: sessions.sessions[0].day - 2,
+      sessionLength: sessions.sessions[0].sessionLength * 3
+    },
+    ...sessions.sessions
+  ];
+
   // Format data date for the chart
-  let data = sessions.sessions.map((session) => ({
+  const formattedData = data.map((session) => ({
     day: new Date(Date.now() - (7 - (session.day + 1)) * 86400000)
       .toLocaleString("fr-FR", { weekday: "long" })[0]
       .toUpperCase(),
     sessionLength: session.sessionLength
   }));
-
-  // Mock a missing past (and add top padding by giving a higher value)
-  data = [
-    { day: data[0].day, sessionLength: data[0].sessionLength * 3 },
-    data[0],
-    ...data
-  ];
 
   return (
     <article className="dashboard__chart dashboard__chart--sessions">
@@ -35,7 +37,7 @@ export default function Sessions({ sessions }: Props) {
         height="100%"
         className="sessions__chart"
       >
-        <LineChart data={data}>
+        <LineChart data={formattedData}>
           <XAxis
             dataKey="day"
             axisLine={false}
