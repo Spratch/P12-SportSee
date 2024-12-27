@@ -86,6 +86,8 @@ export default function Activity({ activity }: Props) {
             wrapperStyle={{
               top: 0,
               right: 0,
+              left: 0,
+              width: "100%",
               fontSize: "0.875rem"
             }}
           />

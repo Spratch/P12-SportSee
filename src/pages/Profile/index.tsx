@@ -36,21 +36,6 @@ export default function Profile() {
     fetchAllData();
   }, [userId]);
 
-  console.log(
-    "user:",
-    user?.userInfos.firstName + " " + user?.userInfos.lastName + ",",
-    "\nToday score:",
-    user?.todayScore,
-    "\nKey data:",
-    user?.keyData,
-    "\nActivity:",
-    activity,
-    "\nSessions:",
-    sessions,
-    "\nPerformance:",
-    performance
-  );
-
   return (
     <main className="profile">
       {/* Intro */}

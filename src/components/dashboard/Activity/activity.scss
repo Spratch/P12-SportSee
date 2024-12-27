@@ -1,7 +1,14 @@
+@import "../../../mixins.scss";
+
 .dashboard__chart--activity {
-  grid-column: span 3;
+  grid-column: span 1;
   padding: 1.5rem 2rem;
-  height: 20rem;
+
+  @include from(lg) {
+    grid-column: span 3;
+    padding: 1.5rem 2rem;
+    min-height: 20rem;
+  }
 
   h2 {
     position: absolute;
@@ -13,8 +20,15 @@
 
   .recharts-default-legend {
     display: flex;
-    gap: 2rem;
-    justify-content: end;
+    flex-direction: column;
+    padding-top: 1.5rem !important;
+
+    @include from(lg) {
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: end;
+      padding-top: 0 !important;
+    }
   }
 
   .recharts-legend-item {

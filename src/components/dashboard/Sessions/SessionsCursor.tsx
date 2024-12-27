@@ -14,7 +14,7 @@ export default function SessionsCursor(props: Props) {
     <rect
       x={x}
       y={0}
-      width={500}
+      width={800}
       height={500}
       fill="black"
       opacity={0.1}
