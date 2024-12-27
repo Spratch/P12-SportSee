@@ -16,6 +16,7 @@ import {
 import { UserType } from "../../types/user";
 import { SessionsType } from "../../types/sessions";
 import { PerformanceType } from "../../types/performance";
+import Skeleton from "../../components/dashboard/Skeleton";
 
 export default function Profile() {
   const { userId } = useParams();
@@ -52,20 +53,47 @@ export default function Profile() {
       {/* Dashboard */}
       <section className="profile__dashboard">
         {/* Activity */}
-        {activity && <Activity activity={activity} />}
+        {activity ? (
+          <Activity activity={activity} />
+        ) : (
+          <Skeleton className="dashboard__chart dashboard__chart--activity" />
+        )}
 
         {/* Sessions */}
-        {sessions && <Sessions sessions={sessions} />}
+        {sessions ? (
+          <Sessions sessions={sessions} />
+        ) : (
+          <Skeleton className="dashboard__chart" />
+        )}
 
         {/* Performances */}
-        {performance && <Performances performances={performance} />}
+        {performance ? (
+          <Performances performances={performance} />
+        ) : (
+          <Skeleton className="dashboard__chart" />
+        )}
 
         {/* Daily score */}
-        {user?.todayScore && <Score score={user.todayScore} />}
+        {user?.todayScore ? (
+          <Score score={user.todayScore} />
+        ) : (
+          <Skeleton className="dashboard__chart" />
+        )}
       </section>
 
       {/* Key datas */}
-      {user?.keyData && <KeyDatas keyDatas={user.keyData} />}
+      {user?.keyData ? (
+        <KeyDatas keyDatas={user.keyData} />
+      ) : (
+        <section className="profile__datas">
+          {[...Array(4)].map((_, index) => (
+            <Skeleton
+              key={index}
+              className="keydata"
+            />
+          ))}
+        </section>
+      )}
     </main>
   );
 }
