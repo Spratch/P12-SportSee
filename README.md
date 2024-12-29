@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# SportSee - Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based analytics dashboard that visualizes user fitness data through various charts and metrics built with [Recharts](https://recharts.org/en-US/).
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (version 18 or higher recommended)
+- npm or yarn
+- Backend API running (see [API Reference](#api-reference))
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone this repository
+2. Install dependencies:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+## API Reference
+
+This project requires the SportSee API backend to be running. You can find the backend repository [here](https://github.com/OpenClassrooms-Student-Center/SportSee).
+
+## Project Structure
+
+```
+src/
+├── api/              # API client and service functions
+├── components/       # Reusable React components
+│   ├── dashboard/    # Dashboard components (graphs)
+│   ├── icons/        # SVG icon components
+│   ├── Layout/       # Layout components
+│   ├── SideNav/      # Side navigation components
+│   └── TopNav/       # Top navigation component
+├── pages/            # Page components
+├── types/            # TypeScript type definitions
+└── styles/           # Global styles and SCSS mixins
+```
+
+## Technologies Used
+
+- **React 18** - UI library
+- **TypeScript** - Static typing
+- **React Router** - Navigation
+- **Recharts** - Data visualization charts
+- **SASS** - Styling
+- **Vite** - Build tool and development server
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **SWC** - Fast compilation
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist` directory.
